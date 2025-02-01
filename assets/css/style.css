@@ -458,6 +458,7 @@ body.nav-active {
   display: grid;
   place-content: center;
   gap: 6px;
+  position: relative; /* To position ::before and ::after correctly */
 }
 
 .nav-open-btn .line {
@@ -465,36 +466,45 @@ body.nav-active {
   height: 2px;
   background-color: var(--bg-black);
   transition: var(--transition-1);
+  position: relative; /* For centering lines inside button */
+  z-index: 2; /* Ensure lines are above ::before and ::after */
+}
+.nav-open-btn .line-1 {
+  transform-origin: center;
 }
 
 .nav-open-btn:is(:hover, :focus-visible) .line {
   background-color: var(--bg-white);
 }
-
 .nav-open-btn:is(:hover, :focus-visible) .line-1 {
   transform: scaleX(0.7);
 }
 
-.nav-open-btn::before {
-  background-color: gray;
-
-  padding: 10px;
-  border-radius: 50%;
+.nav-open-btn::before,
+.nav-open-btn::after {
+  content: ""; /* To create the pseudo-elements */
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%; /* Circular shape */
   width: 40px;
   height: 40px;
-  place-items: center;
-  color: wheat;
+  z-index: 1; /* Ensure the circle appears behind the lines */
+}
+.nav-open-btn::before {
+  background-color: rgb(105, 9, 164);
+  padding: 10px;
+  color: rgb(255, 255, 254);
 }
 
 .nav-open-btn::after {
-  background-color: gray;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  place-items: center;
-  justify-content: center;
-  color: wheat;
+  background-color: gray; /* Uncomment if you want a background */
+  color: rgb(248, 248, 248);
+}
+
+.nav-open-btn:hover::before,
+.nav-open-btn:hover::after {
+  background-color: rgb(105, 9, 164); /* Adjust color on hover */
 }
 
 .navbar {
