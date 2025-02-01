@@ -1341,7 +1341,7 @@ textarea.input-field {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   padding: 20px;
   border-radius: 10px;
   width: 100%;
