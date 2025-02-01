@@ -1951,8 +1951,8 @@ footer .container {
 }
 
 .avatar img {
-  width: 45%; /* Make image responsive */
-  height: 60%; /* Fill the avatar's height */
+  width: 70%; /* Make image responsive */
+  height: 65%; /* Fill the avatar's height */
   object-fit: cover; /* Prevent image distortion and ensure it covers the container */
   object-position: center;
 }
