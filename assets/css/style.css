@@ -192,7 +192,6 @@ body {
 .navbar li {
   font-size: 1rem;
   font-weight: 700; /* Increase weight for better clarity */
-
 }
 
 body.loaded {
@@ -647,7 +646,6 @@ body.nav-active {
   animation: glow 1.5s infinite alternate;
 }
 /* Glowing effect animation */
-
 
 .card:hover {
   transform: scale(1.05);
@@ -1327,52 +1325,213 @@ textarea.input-field {
   border-top: 2px solid #fff;
 }
 
-summary::marker {
-  content: "";
-}
-
-.uiux {
-  border-top: 1px solid #333;
-  padding: 3vh 0;
-}
-
-.product {
-  padding: 3vh 0;
-  /* border-top: 1px solid #333; */
-}
-.titleFAQ {
-  font-size: 4rem;
-  align-items: center;
-  justify-content: center;
-  display: inline-block;
-  text-align: center;
-  margin-left: 45%;
-}
-#flex i {
-  font-size: 3rem;
-  color: #676767;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+/* contact */
+/* Contact Content */
 .contact .contact-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border: 1px solid #333;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
+  gap: 20px; /* Mobile aur tablet ke liye spacing improve karega */
 }
+
+.contact-form,
+.contact-list {
+  flex: 1;
+  min-width: 320px; /* Ensure proper width in small screens */
+}
+
+/* Responsive Design */
+
+/* Tablet (Medium Screens) */
+/* @media (max-width: 1024px) {
+  .contact .contact-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-form,
+  .contact-list {
+    width: 100%;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+} */
+
+/*  Mobile (Small Screens) */
+/* @media (max-width: 600px) {
+  .contact {
+    padding: 40px 15px;
+  }
+
+  .contact .container {
+    padding: 20px;
+  }
+
+  .input-field,
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .item-icon img {
+    width: 40px;
+    height: 40px;
+  }
+} */
+
+/* optional conatact section part 2  */
+
+.contact_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  padding: 10px;
+  margin-top: -15px;
+  background: #060606;
+  border-radius: 10px;
+}
+
+.contact_section_data {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact_section_data h1 {
+  font-size: 4rem; /* Increased font size */
+  color: rgb(219, 29, 209);
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px; /* Reduced margin between heading and buttons */
+}
+
+/* Flexbox for buttons on the same line */
+.conatctButton {
+  display: flex; /* Enables flexbox */
+  gap: 20px; /* Adds space between the buttons */
+  justify-content: center; /* Centers the buttons horizontally */
+  margin-bottom: 20px; /* Adds space between buttons and social icons */
+}
+
+/* Styling for each button */
+.contact_btn {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #e775d9, #a9127e);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+/* Flexbox for social icons on the next line */
+.contact_social {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  margin-top: 10px;
+  background: linear-gradient(to right, #ea5ad9, #61154b);
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Styling for social icons */
+.contact_social i {
+  font-size: 24px; /* Adjust icon size */
+  color: #333; /* Set default color */
+}
+
+.contact_social i:hover {
+  color: #6a43b1; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact_section_data h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact_btn {
+    font-size: 1rem;
+    padding: 8px 18px;
+  }
+
+  .contact_social i {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact_section_data h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact_btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .contact_social i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact_section_data h1 {
+    font-size: 1.2rem;
+  }
+
+  .contact_btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .contact_social i {
+    font-size: 18px;
+  }
+}
+
 footer {
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
   padding: 20px;
-  background-color: #a39696;
-  color: #090909;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #131313;
+  color: #888484;
+  white-space: nowrap;
 }
 
-/* Base styles (already present) */
+footer .container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  flex-wrap: wrap;
+}
+
+/* Base styles 
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
@@ -1587,10 +1746,8 @@ footer {
 .card-container .card h3 {
   color: rgb(255, 255, 255);
   font-size: 2rem;
-  
 }
 
-  
 .card-container .card p {
   color: rgb(73, 70, 70);
   font-size: 1.7rem;
@@ -1598,11 +1755,9 @@ footer {
 
 /* PORTFOLIO */
 
-
-.card-container{
+.card-container {
   border-radius: 10px;
 }
-
 
 .card img {
   width: 100%;
@@ -1656,7 +1811,112 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .card-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
+}
+/* FAQ section */
+.faq-container {
+  max-width: 90%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Horizontally center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 4px solid #6a43b1; */
+  padding: 10px;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.faq-item {
+  border-bottom: 3px solid #ddd;
+  width: 100%;
+  margin: 10px;
+  /* border: 2px solid #751d7f; */
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  transition: linear 0.2s;
+}
+
+.faq-item:hover {
+  background: #4c4a4a;
+}
+.container h1 {
+  font-size: 2rem;
+  width: 100%;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: white;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  padding: 0 15px;
+  color: #c6c4c4;
+  font-size: 16px;
+  width: 100;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 150px;
+  padding: 10px 15px;
+}
+
+.faq-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  transition: transform 0.8s;
+  font-size: 2.4rem;
+  color: #6a43b1;
+}
+
+/* Refund big text styling  */
+.refundtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  /* Pink to Dark Pink Gradient */
+}
+
+.refundText_content {
+  background: linear-gradient(
+    to right,
+    #ea5ad9,
+    #61154b
+  ); /* Slightly transparent black */
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.refundText_content h1 {
+  color: rgb(30, 30, 30); /* Pure Black Text */
+  font-size: 2rem;
+  font-weight: bold;
 }

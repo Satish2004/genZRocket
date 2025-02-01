@@ -270,13 +270,72 @@
 <!-- TESTIOMONIALS SECTIUON COMING SOON -->
  
 <!-- FAQ -->
-<section class="section contact" aria-label="contact me" id="faq">
+<section class="section contact faq_conatiner" aria-label="contact me" id="faq">
   <div class="container">
     <h2 class="title h2 section-title">FAQ's</h2>
-<!-- drop down section yaha se start rahega FAQ ke liye -->
-    
+    <section class="faq-container">
+      
+  
+      <div class="faq-item">
+          <button class="faq-question">
+              <h1>What is the 100% refund policy?</h1>
+              
+              <i class="fa-solid fa-angle-down arrow"></i>
+          </button>
+          <div class="faq-answer">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ex omnis repudiandae possimus, sed asperiores. Nostrum eaque voluptas corporis distinctio.
+          </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <h1>How long will it take to start posting contest on my page?</h1>
+
+            
+            <i class="fa-solid fa-angle-down arrow"></i>
+        </button>
+        <div class="faq-answer">
+       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, vel tempore incidunt deserunt beatae autem repellat voluptatum quod illum aspernatur corrupti fugiat facilis porro, et optio non a commodi voluptate!      
+
+        </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <h1>How long will it take to start posting contest on my page?</h1>
+
+          
+          <i class="fa-solid fa-angle-down arrow"></i>
+      </button>
+      <div class="faq-answer">
+     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, vel tempore incidunt deserunt beatae autem repellat voluptatum quod illum aspernatur corrupti fugiat facilis porro, et optio non a commodi voluptate!      
+
+      </div>
+  </div>
+  <di class="faq-item">
+    <button class="faq-question">
+      <h1>How long will it take to start posting contest on my page?</h1>
+
+        
+        <i class="fa-solid fa-angle-down arrow"></i>
+    </button>
+    <div class="faq-answer">
+   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, vel tempore incidunt deserunt beatae autem repellat voluptatum quod illum aspernatur corrupti fugiat facilis porro, et optio non a commodi voluptate!      
+
+    </div>
+</div>
+      
+    </div>
+      </div>
+  </section>
   </div>
 </section>
+
+   <!-- Full refnd text  -->
+    <div class="refundtext">
+      <div class="refundText_content">
+        <h1>Full Refund If We Don't Beat Your Current Views</h1>
+      </div>
+    </div>
+
         <!-- 
         - #CONTACT
       -->
@@ -286,7 +345,8 @@
             <h2 class="title h2 section-title">CONTACT US</h2>
 
             <div class="contact-content">
-              <form action="./index.html" method="post" class="contact-form">
+              <!-- FORM OF CONTACT --> 
+               <!-- <form action="./index.html" method="post" class="contact-form">
                 <input
                   type="text"
                   name="name"
@@ -305,14 +365,7 @@
                   class="input-field"
                 />
 
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone"
-                  autocomplete="off"
-                  class="input-field"
-                />
-
+               
                 <textarea
                   name="message"
                   placeholder="Enter massges"
@@ -325,80 +378,45 @@
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
-              </form>
+              </form> -->
 
-            
+             <div class="contact_section">
+              <div class="contact_section_data">
+                <h1 class >Let's connect</h1>
+                <div class="conatctButton">
+                  <button class="contact_btn">Email</button>
+                  <button class="contact_btn">Chat On WhatsApp</button>
+                </div>
+                <div class="contact_social">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                
+              </div>
+             </div>
 
-              <ul class="contact-list">
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-1.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
-
-                  <div>
-                    <span class="title h6">123456566</span>
-
-                  </div>
-                </li>
-
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-2.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
-
-                  <div>
-                    <address class="title h6">
-                      23, bhlai kailash nagar kohka bhilai durg chhattisgarh
-                    </address>
-                  </div>
-                </li>
-
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-3.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
-
-                  <div>
-                    <span class="title h6">developent@.com</span>
-
-                  </div>
-                </li>
-              </ul>
+             
             </div>
           </div>
         </section>
       </article>
-    </main>
+    </main> 
 
     <!-- 
     - #FOOTER
   -->
 
-    <footer class="footer">
-      <div class="container">
-        <p class="copyright">Copyright &  By @genzrocket - 2025</p>
-
-      
-      </div>
-    </footer>
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">GenZrocket © <span id="year"></span>All rights Reserved</p>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
 
 
     <!-- 

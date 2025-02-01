@@ -51,23 +51,21 @@
 
 //-------------------------------------------------------------------------------------------->
 
-function enableDarkMode() {
-  root.style.setProperty("--bg-color", "var(--bg-black)");
-  root.style.setProperty("--text-color", "var(--text-white)");
-  root.style.setProperty("--gradient-bg", "var(--gradient-1)");
-  
-  localStorage.setItem("theme", "dark");
- 
-}
+// function enableDarkMode() {
+//   root.style.setProperty("--bg-color", "var(--bg-black)");
+//   root.style.setProperty("--text-color", "var(--text-white)");
+//   root.style.setProperty("--gradient-bg", "var(--gradient-1)");
 
-function enableLightMode() {
-  root.style.setProperty("--bg-color", "var(--bg-light)");
-  root.style.setProperty("--text-color", "var(--text-black)");
-  root.style.setProperty("--gradient-bg", "var(--gradient-2)");
-  
-  localStorage.setItem("theme", "light");
+//   localStorage.setItem("theme", "dark");
+// }
 
-}
+// function enableLightMode() {
+//   root.style.setProperty("--bg-color", "var(--bg-light)");
+//   root.style.setProperty("--text-color", "var(--text-black)");
+//   root.style.setProperty("--gradient-bg", "var(--gradient-2)");
+
+//   localStorage.setItem("theme", "light");
+// }
 
 /**
  * PRELOADER
@@ -175,41 +173,21 @@ const filterContent = function () {
 
 addEventOnElements(tabBtns, "click", filterContent);
 
-/**
- * Custom cursor
- */
+// FAQ section drop down
+document.querySelectorAll(".faq-question").forEach((button) => {
+  button.addEventListener("click", function () {
+    const faqItem = this.parentElement;
 
-const cursors = document.querySelectorAll("[data-cursor]");
-const hoveredElements = [
-  ...document.querySelectorAll("button"),
-  ...document.querySelectorAll("a"),
-];
+    // Close other open FAQs
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      if (item !== faqItem) {
+        item.classList.remove("active");
+      }
+    });
 
-window.addEventListener("mousemove", function (event) {
-  const posX = event.clientX;
-  const posY = event.clientY;
-
-  /** cursor dot position */
-  cursors[0].style.left = `${posX}px`;
-  cursors[0].style.top = `${posY}px`;
-
-  /** cursor outline position */
-  setTimeout(function () {
-    cursors[1].style.left = `${posX}px`;
-    cursors[1].style.top = `${posY}px`;
-  }, 80);
+    // Toggle current FAQ
+    faqItem.classList.toggle("active");
+  });
 });
-
-/** add hovered class when mouseover on hoverElements */
-addEventOnElements(hoveredElements, "mouseover", function () {
-  for (let i = 0, len = cursors.length; i < len; i++) {
-    cursors[i].classList.add("hovered");
-  }
-});
-
-/** remove hovered class when mouseout on hoverElements */
-addEventOnElements(hoveredElements, "mouseout", function () {
-  for (let i = 0, len = cursors.length; i < len; i++) {
-    cursors[i].classList.remove("hovered");
-  }
-});
+// Footer dynamic year
+document.getElementById("year").textContent = new Date().getFullYear();
