@@ -191,3 +191,12 @@ document.querySelectorAll(".faq-question").forEach((button) => {
 });
 // Footer dynamic year
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Initialize Typed.js
+var typed = new Typed(".genzrocket_text", {
+  strings: ["GenZRocket", "By", "Nikhil", "Sharma"],
+  loop: true,
+  backSpeed:90,
+
+  typeSpeed: 90,
+});

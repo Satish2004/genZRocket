@@ -177,8 +177,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-black);
-  color: var(--text-light-gray);
+  background-color: rgb(71, 70, 68);
+  color: black;
   font-family: var(--fontFamily-roboto);
   font-size: var(--fontSize-8);
   line-height: 1.75;
@@ -188,11 +188,10 @@ body {
 /* TEXT Gradient making */
 .section .container h2 {
   font-size: 3rem;
-  font-weight: 700; /* Increase weight for better clarity */
-  background: linear-gradient(to right, rgba(239, 145, 7, 1), #ff5f14);
+  font-weight: 700;
+  background: linear-gradient(to right, rgb(255, 154, 2), #e40c0c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add slight shadow for better visibility */
 }
 
 .navbar li {
@@ -425,7 +424,7 @@ body.nav-active {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--bg-black);
+  background-color: rgb(71, 70, 68);
   /* background: black; */
   padding-block: 20px;
   z-index: 4;
@@ -470,7 +469,7 @@ body.nav-active {
 .nav-open-btn .line {
   width: 24px;
   height: 2px;
-  background-color: var(--bg-black);
+  background-color: rgb(162, 153, 153);
   transition: var(--transition-1);
   position: relative; /* For centering lines inside button */
   z-index: 2; /* Ensure lines are above ::before and ::after */
@@ -498,24 +497,35 @@ body.nav-active {
   z-index: 1; /* Ensure the circle appears behind the lines */
 }
 .nav-open-btn::before {
-  background-color: rgb(105, 9, 164);
-  padding: 10px;
+  background: linear-gradient(to right, rgba(239, 145, 7, 1), #ff5f14);
+  /* border: 2px solid var(--bg-black); */
+  padding: 0;
+  margin: 3px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   color: rgb(255, 255, 254);
 }
 
 .nav-open-btn::after {
-  background-color: gray; /* Uncomment if you want a background */
+  background-color: rgb(167, 2, 2); /* Uncomment if you want a background */
   color: rgb(248, 248, 248);
 }
 
 .nav-open-btn:hover::before,
 .nav-open-btn:hover::after {
-  background-color: rgb(105, 9, 164); /* Adjust color on hover */
+  background: linear-gradient(to right, rgba(239, 145, 7, 1), #ff5f14);
+  padding: 0;
+  margin: 3px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .navbar {
   position: fixed;
-  background-color: black;
+  background-color: rgb(100, 97, 97);
+  padding: 20px;
   top: 0;
   left: -300px;
   width: 100%;
@@ -558,14 +568,28 @@ body.nav-active {
 }
 
 .navbar-link {
-  padding: 8px;
+  padding: 18px;
   margin-block-start: 4px;
 }
 
 .navbar-link:is(:hover, :focus-visible) {
   color: var(--text-white);
 }
-
+.navbar-list a {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, rgb(244, 146, 0), #ff0808);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.navbar-list a:hover {
+  color: rgb(65, 61, 61);
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -632,7 +656,7 @@ body.nav-active {
 .section-title {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #333;
+  color: #000000;
   margin-bottom: 30px;
 }
 
@@ -649,35 +673,37 @@ body.nav-active {
 /* Card Styling */
 .card {
   padding: 120px;
-  background: #000;
+  background: #302f2f;
   margin: 20px;
   border-radius: 50px;
   width: 500px;
   text-align: center;
-  color: white;
+  color: rgb(165, 21, 21);
   font-size: 1.2rem;
-  border: 4px solid #6a43b1;
-  box-shadow: 0 0 10px #6a43b1;
+  border: 4px solid rgba(228, 107, 42, 0.967);
+  box-shadow: 0 0 15px rgba(216, 16, 16, 0.8); /* Adding a subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: glow 1.5s infinite alternate;
 }
+
 /* Glowing effect animation */
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px #6a43b1, 0 0 60px #6a43b1;
-}
-
-.card h2 {
-  font-size: 6.5rem;
-  color: #007bff;
-  margin-bottom: 10px;
+  box-shadow: 0 0 30px rgb(255, 5, 5), 0 0 50px rgb(246, 189, 2); /* Enhanced shadow on hover */
 }
 
 .card p {
   font-size: 1rem;
-  color: #555;
+  color: #ae2323;
   line-height: 1.5;
+}
+.card .desc {
+  color: #ff4d4d; /* Red modern text */
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
 /* services end */
@@ -702,7 +728,7 @@ body.nav-active {
   }
 
   .card h3 {
-    font-size: 1.8rem;
+    font-size: 3.8rem;
   }
 
   .card p {
@@ -746,7 +772,11 @@ body.nav-active {
 
 .social-link {
   color: var(--text-white);
-  font-size: 1.8rem;
+  font-size: 0.8rem;
+}
+
+.hero-content i {
+  border: linear-gradient(to right, rgb(244, 146, 0), #ff0808);
 }
 
 .profile-card .card-banner {
@@ -829,7 +859,9 @@ textarea.input-field {
 
 .copyright {
   flex-grow: 1;
-  font-family: var(--fontFamily-recoleta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .back-top-btn .span {
@@ -953,9 +985,10 @@ textarea.input-field {
    */
     margin-top: 20px;
     color: white;
-    border: 2px solid #6a43b1;
+    border: 2px solid #b66b0f;
     padding: 10px;
     border-radius: 20%;
+    background: #6f6e6e;
   }
   .hero .container .hero-content h5 h1 {
     margin-top: -20px;
@@ -1059,26 +1092,6 @@ textarea.input-field {
   )
   .grid-list {
   grid-template-columns: repeat(3, 1fr);
-}
-
-/**
-   * CTA
-   */
-
-.cta .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cta .section-title {
-  text-align: left;
-  gap: 30px;
-}
-
-.cta .btn {
-  flex-shrink: 0;
-  margin: 0;
 }
 
 /**
@@ -1200,17 +1213,14 @@ textarea.input-field {
   font-size: 4rem;
 }
 .hero .hero_text {
-  font-size: 2rem;
-  color: rgb(98, 87, 87);
-  line-height: 1rem;
+  font-size: 4rem;
+  color: rgba(224, 224, 224, 0.845);
+  line-height: 2rem;
   white-space: nowrap;
   margin-top: -20px;
+  margin-left: -20px;
 }
-.hero .hero_text2 {
-  line-height: 20px;
-  margin-top: -10px;
-  color: rgb(98, 87, 87);
-}
+
 .navbar .navbar-lis .span {
   border-radius: 20%;
 }
@@ -1418,7 +1428,7 @@ textarea.input-field {
   width: 100%;
   padding: 10px;
   margin-top: -15px;
-  background: #060606;
+  /* background: #060606; */
   border-radius: 10px;
 }
 
@@ -1449,24 +1459,22 @@ textarea.input-field {
 
 /* Styling for each button */
 .contact_btn {
-  padding: 10px 20px;
-  background: linear-gradient(to right, #e775d9, #a9127e);
+  /* padding: 10px 20px; */
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 3rem;
+  font-size: 1.4rem;
+  margin-left: -10%;
 }
 
 /* Flexbox for social icons on the next line */
 .contact_social {
   display: flex;
-  gap: 35px;
+  gap: 15px;
   justify-content: center;
-  margin-top: 10px;
-  background: linear-gradient(to right, #ea5ad9, #61154b);
+  margin-top: -10%;
+  /* background: linear-gradient(to right, #ea5ad9, #61154b); */
   padding: 10px;
   width: 100%;
+  height: 100%;
   border-radius: 5px;
 }
 
@@ -1474,10 +1482,15 @@ textarea.input-field {
 .contact_social i {
   font-size: 24px; /* Adjust icon size */
   color: #333; /* Set default color */
+  /* margin-top: -40%; */
+  background-color: #f45207ee;
+  padding: 10px;
+
+  border-radius: 50%;
 }
 
 .contact_social i:hover {
-  color: #6a43b1; /* Change color on hover */
+  color: #d2ccc0; /* Change color on hover */
 }
 
 /* Responsive Design */
@@ -1760,12 +1773,13 @@ footer .container {
 
 /* Extra service card css */
 .card-container .card h3 {
-  color: rgb(255, 255, 255);
-  font-size: 2rem;
+  color: rgb(255, 244, 244);
+  margin-top: 20px;
+  font-size: 3rem;
 }
 
 .card-container .card p {
-  color: rgb(73, 70, 70);
+  color: rgb(216, 209, 209);
   font-size: 1.7rem;
 }
 
@@ -1773,6 +1787,7 @@ footer .container {
 
 .card-container {
   border-radius: 10px;
+  /* border: 1px solid rgb(216, 209, 209); */
 }
 
 .card img {
@@ -1799,6 +1814,7 @@ footer .container {
   font-size: 1.3rem;
   font-weight: bold;
   color: #6a43b1;
+  text-decoration: underline;
 }
 
 /* Button */
@@ -1921,18 +1937,14 @@ footer .container {
 }
 
 .refundText_content {
-  background: linear-gradient(
-    to right,
-    #ea5ad9,
-    #61154b
-  ); /* Slightly transparent black */
+  border: 2px solid #ea6906;
   padding: 20px 40px;
   border-radius: 10px;
   text-align: center;
 }
 
 .refundText_content h1 {
-  color: rgb(30, 30, 30); /* Pure Black Text */
+  color: rgb(204, 192, 192); /* Pure Black Text */
   font-size: 2rem;
   font-weight: bold;
 }
@@ -1952,7 +1964,7 @@ footer .container {
 
 .avatar img {
   width: 70%; /* Make image responsive */
-  height: 65%; /* Fill the avatar's height */
+  height: 100%; /* Fill the avatar's height */
   object-fit: cover; /* Prevent image distortion and ensure it covers the container */
   object-position: center;
 }
@@ -1963,7 +1975,7 @@ footer .container {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px); /* Adjust float distance */
+    transform: translateY(-30px); /* Adjust float distance */
   }
 }
 
@@ -1981,7 +1993,7 @@ footer .container {
   margin-top: 40%;
 }
 .hero {
-  margin-top: -10px; 
+  margin-top: -10px;
 }
 
 @media (min-width: 1024px) {
@@ -1993,7 +2005,7 @@ footer .container {
 /* For mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
   .hero {
-    margin-top: 20px; /* Adjusted to create space for small screens */
+    margin-top: 80px; /* Adjusted to create space for small screens */
   }
 }
 
@@ -2002,4 +2014,34 @@ footer .container {
   .hero {
     margin-top: 15px; /* Adjusted for medium screens */
   }
+}
+
+/* update 2.0 */
+.hero .genzrocket_text {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 5rem;
+  background: linear-gradient(to right, rgb(244, 146, 0), #ff0808);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.contact-content {
+  border: 0.6px solid #cd6e08;
+  padding: 20px;
+}
+.downlaodBTN {
+  background: linear-gradient(to right, rgb(254, 156, 10), #de0404);
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(244, 244, 244);
+}
+.contact_btn {
+  background: linear-gradient(to right, rgb(254, 156, 10), #de0404);
+  padding: 10px;
+  border-radius: 20px;
+}
+.card- p {
+  color: red;
 }
